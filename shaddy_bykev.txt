@@ -1,0 +1,98 @@
+-- Gui to Lua
+-- Version: 3.2
+-- created by kev :)
+
+-- Instances:
+
+local KeyGUI = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local title = Instance.new("TextLabel")
+local keybox = Instance.new("TextBox")
+local UICorner_2 = Instance.new("UICorner")
+local CheckB = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+
+--Properties:
+
+KeyGUI.Name = "KeyGUI"
+KeyGUI.Parent = game.CoreGui
+KeyGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Name = "main"
+Frame.Parent = KeyGUI
+Frame.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+Frame.Position = UDim2.new(0.293252587, 0, 0.302765638, 0)
+Frame.Size = UDim2.new(0, 478, 0, 270)
+Frame.Active = true
+Frame.Draggable = false
+
+UICorner.Parent = Frame
+
+title.Name = "title"
+title.Parent = Frame
+title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+title.BackgroundTransparency = 1.000
+title.Position = UDim2.new(0.221757323, 0, 0, 0)
+title.Size = UDim2.new(0, 266, 0, 50)
+title.Font = Enum.Font.SourceSans
+title.Text = "This script is protected by Shaddyy's Key Protector"
+title.TextColor3 = Color3.fromRGB(170, 85, 255)
+title.TextScaled = true
+title.TextSize = 14.000
+title.TextWrapped = true
+
+keybox.Name = "keybox"
+keybox.Parent = Frame
+keybox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+keybox.BackgroundTransparency = 0.800
+keybox.Position = UDim2.new(0.152719662, 0, 0.299999982, 0)
+keybox.Size = UDim2.new(0, 331, 0, 50)
+keybox.Font = Enum.Font.SourceSans
+keybox.Text = "[Insert Key here]"
+keybox.TextColor3 = Color3.fromRGB(0, 0, 0)
+keybox.TextScaled = true
+keybox.TextSize = 14.000
+keybox.TextWrapped = true
+
+UICorner_2.Parent = keybox
+
+CheckB.Name = "CheckB"
+CheckB.Parent = Frame
+CheckB.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+CheckB.BorderSizePixel = 0
+CheckB.Position = UDim2.new(0.290794969, 0, 0.622222245, 0)
+CheckB.Size = UDim2.new(0, 200, 0, 50)
+CheckB.Font = Enum.Font.SourceSans
+CheckB.Text = "Check"
+CheckB.TextColor3 = Color3.fromRGB(0, 0, 0)
+CheckB.TextScaled = true
+CheckB.TextSize = 14.000
+CheckB.TextWrapped = true
+
+UICorner_3.Parent = CheckB
+
+-- Scripts:
+
+local function SKKXXA_fake_script() -- CheckB.LocalScript 
+	local script = Instance.new('LocalScript', CheckB)
+
+	local key = script.Parent.Parent.keybox
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		if key.Text == "27832798" then
+			script.Parent.Parent:TweenPosition(UDim2.new(0.383,0,-0.9,0), "Out", "Quad", 1, true)
+			wait(5)
+			script.Parent.Parent:Destroy()
+			print("Destroyed!")
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/Ale33-ux/MyScriptT/main/MiaGuiConKeySheesh.txt?token=ATDWLDAW3ERGFR37QXTWRH3B2XQF2'))()
+		elseif
+			key.Text == "" then
+			key.Text = "" else
+			key.Text = "Incorrect, try again."
+			wait(1)
+			key.Text = "[Insert key here]"
+		end
+	end)
+end
+coroutine.wrap(SKKXXA_fake_script)()
